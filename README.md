@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dscout/desponders.png?branch=master)](https://travis-ci.org/dscout/desponders)
+
 # Desponders
 
 A stack of light-weight responders tailored to JSON APIs.
