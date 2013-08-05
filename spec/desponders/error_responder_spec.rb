@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-I18n.load_path += [File.expand_path('lib/locales/errors.en.yml')]
+I18n.load_path += [File.expand_path('lib/desponders/locales/en.yml')]
 
 describe Desponders::ErrorResponder do
   class MockErrorResponder < Struct.new(:to_format)
