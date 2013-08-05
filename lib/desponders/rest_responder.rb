@@ -1,5 +1,5 @@
 module Desponders
-  module RESTResponder
+  module RestResponder
     def to_format
       case
       when get?

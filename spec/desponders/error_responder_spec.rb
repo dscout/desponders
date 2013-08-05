@@ -1,6 +1,4 @@
-require 'active_support/core_ext/object/blank'
-require 'i18n'
-require 'desponders/error_responder'
+require 'spec_helper'
 
 I18n.load_path += [File.expand_path('lib/locales/errors.en.yml')]
 

@@ -1,4 +1,4 @@
-require 'desponders/paginated_responder'
+require 'spec_helper'
 
 describe Desponders::PaginatedResponder do
   class MockPaginatedResponderBase

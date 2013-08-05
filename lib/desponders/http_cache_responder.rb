@@ -1,6 +1,5 @@
 module Desponders
-  module HTTPCacheResponder
-    # Stop the rendering chain if we have a fresh resource.
+  module HttpCacheResponder
     def to_format
       return if do_http_cache? && do_http_cache!
 

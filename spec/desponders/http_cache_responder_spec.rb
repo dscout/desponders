@@ -1,16 +1,14 @@
-require 'active_support/core_ext/object/blank'
-require 'action_controller'
-require 'desponders/http_cache_responder'
+require 'spec_helper'
 
-describe Desponders::HTTPCacheResponder do
-  class MockHTTPCacheResponderBase
+describe Desponders::HttpCacheResponder do
+  class MockHttpCacheResponderBase
     def to_format
       '{}'
     end
   end
 
-  class MockHTTPCacheResponder < MockHTTPCacheResponderBase
-    include Desponders::HTTPCacheResponder
+  class MockHttpCacheResponder < MockHttpCacheResponderBase
+    include Desponders::HttpCacheResponder
 
     attr_accessor :controller
 
@@ -23,7 +21,7 @@ describe Desponders::HTTPCacheResponder do
   let(:resource)   { double(:resource, updated_at: nil) }
   let(:collection) { double(:collection) }
 
-  subject(:responder) { MockHTTPCacheResponder.new(controller) }
+  subject(:responder) { MockHttpCacheResponder.new(controller) }
 
   it 'returns nothing with a single resource on get' do
     responder.stub(get?: true, fresh_when: true, resource: resource)

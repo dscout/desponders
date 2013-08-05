@@ -1,14 +1,14 @@
-require 'desponders/rest_responder'
+require 'spec_helper'
 
-describe Desponders::RESTResponder do
-  class MockRESTResponderBase
+describe Desponders::RestResponder do
+  class MockRestResponderBase
     def to_format
       '{}'
     end
   end
 
-  class MockRESTResponder < MockRESTResponderBase
-    include Desponders::RESTResponder
+  class MockRestResponder < MockRestResponderBase
+    include Desponders::RestResponder
 
     attr_accessor :resource
 
@@ -28,7 +28,7 @@ describe Desponders::RESTResponder do
 
   let(:resource) { double(:resource) }
 
-  subject(:responder) { MockRESTResponder.new(resource) }
+  subject(:responder) { MockRestResponder.new(resource) }
 
   it 'renders the resource with 200 status with a get request' do
     responder.stub(get?: true)
