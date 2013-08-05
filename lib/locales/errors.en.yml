@@ -1,0 +1,6 @@
+en:
+  errors:
+    create:  "%{resource_name} could not be created"
+    update:  "%{resource_name} could not be updated"
+    destroy: "%{resource_name} could not be destroyed"
+
