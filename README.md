@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/dscout/desponders.png?branch=master)](https://travis-ci.org/dscout/desponders)
+[![Code Climate](https://codeclimate.com/github/dscout/desponders.png)](https://codeclimate.com/github/dscout/desponders)
 
 # Desponders
 
@@ -9,25 +10,19 @@ A stack of light-weight responders tailored to JSON APIs.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'desponders', '0.2.0'
+gem 'desponders', '~> 0.2.0'
 ```
 
 ## Usage
 
-Use the provided `ApiResponder`, which includes all of the responder modules in
-a sane order:
-
-* Desponders::ErrorResponder
-* Desponders::RESTResponder
-* Desponders::PaginatedResponder
-* Desponders::HTTPCacheResponder
-
-Alternatively, create a `ActionController::Responder` subclass and include the
-responders that you would like to use:
+Create a `ActionController::Responder` subclass and include the responders that
+you would like to use:
 
 ```ruby
 class CustomResponder < ActionController::Responder
+  include Desponders::ErrorResponder
   include Desponders::RESTResponder
+  include Desponders::PaginatedResponder
   include Desponders::HTTPCacheResponder
 end
 ```
@@ -36,10 +31,6 @@ Include the responder in any controllers serving API requests:
 
 ```ruby
 class ApplicationController < ActionController::Base
-   # Included
-  self.responder = Desponder::Responder
-
-  # Custom
   self.responder = CustomResponder
 end
 ```
