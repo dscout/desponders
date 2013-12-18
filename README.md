@@ -35,6 +35,12 @@ class ApplicationController < ActionController::Base
 end
 ```
 
+## PaginatedResponder
+
+The `PaginatedResponder` automatically applies pagination to every multi
+resource GET request. In order for pagination to work your resources must
+respond to a `paginate` method that accepts `page` and `per_page` options.
+
 ## Thanks
 
 The implementation of Desponders is based on the fanstastic work of Jose Valim
