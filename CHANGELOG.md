@@ -1,9 +1,13 @@
-# 0.2.0
+## v0.3.0 (2013-12-17)
 
-- Initial release ported from internal responders. Initial set of responders
+* Remove automatic LINK header insertion from PaginatedResponder.
+
+## v0.2.0 (2013-08-05)
+
+* Initial release ported from internal responders. Initial set of responders
   includes:
 
-  - Error
-  - HttpCaching
-  - Paginated
-  - Rest
+  * Error
+  * HttpCaching
+  * Paginated
+  * Rest
